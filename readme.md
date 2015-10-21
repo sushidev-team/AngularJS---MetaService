@@ -12,7 +12,7 @@ $ bower install ambersive-meta
 ```
 
 #### Step 2
-Add the following meta tag to your index.html file.
+Add the following meta tag to your index.html file between <head></head> Tags.
 ```sh
 <meta ngmeta></meta>
 ```
@@ -103,27 +103,43 @@ angular.module('app', ['ambersive.meta','ui.router'])
 });
 ```
 
-### Options
+### Options and Updates
 
 Currently numerous options are available. You can set them via $metaSettings Provider (in run() => $metaSettingsProvider).
-To update the meta-Tags just Call => MetaSrv.set(object);
+To update the meta-Tags just Call => MetaSrv.set(object); Please be aware that using the given provider updates the data globally. Use the Update Function for updateing just the current route.
 
 ```sh
-    MetaSrv.set(object);
+ MetaSrv.set(object);
 ```
 
 or
 
 ```sh
-    $rootScope.$broadcast('ngmeta',data);
+$rootScope.$broadcast('ngmeta',data);
 ```
 
-#### Title
+#### Global Settings
+
+##### Title
 ```sh
-    $metaSettings.setTitle(value);
+$metaSettings.setTitle(value);
 
 ```
+##### Template-Path for Meta-Tags
+```sh
+$metaSettings.setTemplatePath(path);
 
+```
+##### Fallback-Description
+```sh
+$metaSettings.setDescription(path);
+
+```
+##### Fallback-Image (for Twitter, Facebook)
+```sh
+$metaSettings.setImage(path);
+
+```
 
 *
 
