@@ -108,11 +108,59 @@ angular.module('app', ['ambersive.meta','ui.router'])
 Currently numerous options are available. You can set them via $metaSettings Provider (in run() => $metaSettingsProvider).
 To update the meta-Tags just Call => MetaSrv.set(object); Please be aware that using the given provider updates the data globally. Use the Update Function for updateing just the current route.
 
+#### $state - ROUTER-UI
+
+```sh
+$stateProvide.state('app.state1', {
+    parent: 'app',
+    url:'/state1',
+    data: {
+        meta: {
+            'title': 'State 1',
+            'description':'',
+            'keywords':'',
+            'robots':'',
+            'viewport':'',
+            'image':'http://',
+            'twitter':{
+                'title':'Twitter-Title',
+                'description':'',
+                'card':'summary',
+                'channel':'ambersive',
+                'image':'http://'
+            },
+            'facebook':{
+                'title':'Facebook-Title',
+                'description':'',
+                'type':'website',
+                'sitename':'SITENAME',
+                'image':'http://'
+            },
+            'windows':{
+                'starturl':'http://',
+                'color':'#000'
+            },
+            'apple':{
+                'isCapable':'yes',
+                'statusbarColor':'#000'
+            }
+        }
+    },
+    views: {
+        'main@app': {
+            template: '<div>state1</div>'
+        }
+    }
+});
+```
+
+#### Service
+
 ```sh
  MetaSrv.set(object);
 ```
 
-or
+#### Broadcast
 
 ```sh
 $rootScope.$broadcast('ngmeta',data);
@@ -140,8 +188,55 @@ $metaSettings.setDescription(path);
 $metaSettings.setImage(path);
 
 ```
+##### Favicon - default:'favicon.ico'
+```sh
+$metaSettings.setFavicon(path);
 
-*
+```
+##### Windows-Start URL
+For pinning the Site to the "desktop".
+```sh
+$metaSettings.setStartUrl(url);
+
+```
+
+##### Robots-Tags.
+```sh
+$metaSettings.setRobots(value);
+
+```
+##### Viewport
+```sh
+$metaSettings.setViewport(value);
+
+```
+##### IsCapable
+```sh
+$metaSettings.setIsCapable(value);
+
+##### Statusbar-Color - default: 'black'
+```sh
+$metaSettings.setStatusbarColor(color);
+
+```
+
+```
+##### OG-Site Type - default: 'website'
+```sh
+$metaSettings.setOgType(value);
+
+```
+##### Twitter-Card - default: 'summary'
+```sh
+$metaSettings.setTwitterCard(value);
+
+```
+##### Twitter-Channel - default: 'ambersive'
+```sh
+$metaSettings.setTwitterChannel(value);
+
+```
+
 
 License
 ----

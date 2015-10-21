@@ -293,8 +293,6 @@
                 _MetaData.apple.title = $metaSettings.title;
                 _MetaData.applicationName = $metaSettings.title;
 
-                $log.log(_MetaData);
-
                 return _MetaData;
             };
 
