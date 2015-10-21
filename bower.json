@@ -1,0 +1,33 @@
+{
+  "name": "ambersive-meta",
+  "version": "0.0.1.0",
+  "authors": [
+    "Manuel Ihl <manuel.ihl@ambersive.com>"
+  ],
+  "description": "This Service provides meta and social-media tag service for router-ui.",
+  "main": "build/meta.js",
+  "keywords": [
+    "AngularJS",
+    "Angular",
+    "Metatags",
+    "OGTags",
+    "Tags",
+    "Facebook",
+    "Router-UI"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:AMBERSIVE/AngularJS---MetaService.git"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "ambersive-helper": "ambersive-helper#*",
+    "angular-ui-router": "~0.2.15"
+  },
+  "license": "MIT",
+  "homepage": "http://www.ambersive.com"
+}
