@@ -42,7 +42,7 @@
             ogType = 'website',
             twitterCard = 'summary',
             twitterChannel = 'ambersive',
-            startUrl = 'http://',
+            startUrl = '',
             fields = [
                 'description',
                 'keywords',
@@ -154,7 +154,7 @@
                 var stateData = $rootScope.toState,
                     meta = {},
                     url = $window.location.href,
-                    host = $window.location.host,
+                    host = $window.location.protocol+'//'+$window.location.host,
                     metaFieldsLength = _MetaFields.length;
 
                 if($metaSettings.baseUrl !== undefined && $metaSettings.baseUrl !== ''){
@@ -274,16 +274,15 @@
 
                 // Windows
                 _MetaData.windows = {};
-
+                _MetaData.windows.starturl = host;
                 if(meta.windows === undefined || meta.windows.starturl === undefined){
-                    _MetaData.windows.starturl = $metaSettings.startUrl;
+                    if($metaSettings.startUrl !== undefined && $metaSettings.startUrl !== '') {
+                        _MetaData.windows.starturl = $metaSettings.startUrl;
+                    }
                 } else {
                     _MetaData.windows.starturl = meta.windows.starturl;
                 }
 
-                if(_MetaData.windows.starturl === undefined || _MetaData.windows.starturl === ''){
-                    _MetaData.windows.starturl = $metaSettings.baseUrl;
-                }
 
                 if(meta.windows === undefined || meta.windows.color === undefined){
                     _MetaData.windows.color = $metaSettings.statusbarColor;
