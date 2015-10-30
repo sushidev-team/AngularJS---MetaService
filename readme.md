@@ -1,7 +1,7 @@
 # ROUTER-UI METATAGS - AngularJS Service
 
 ### Version
-0.0.1.2
+0.0.1.3
 
 ### Installation
 
