@@ -148,6 +148,7 @@
                 var stateData = $rootScope.toState,
                     meta = {},
                     url = $window.location.href,
+                    host = window.location.host,
                     metaFieldsLength = _MetaFields.length;
 
                 if(data === undefined) {
@@ -252,9 +253,9 @@
                 // Image
 
                 if(meta.image === undefined){
-                    _MetaData.facebook.image = $metaSettings.image;
-                    _MetaData.twitter.image = $metaSettings.image;
-                    _MetaData.image = $metaSettings.image;
+                    _MetaData.facebook.image = host+'/'+$metaSettings.image;
+                    _MetaData.twitter.image = host+'/'+$metaSettings.image;
+                    _MetaData.image = host+'/'+$metaSettings.image;
                 } else {
                     _MetaData.facebook.image = meta.image;
                     _MetaData.twitter.image = meta.image;
